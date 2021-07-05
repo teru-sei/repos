@@ -1,39 +1,5 @@
-
-
 body {
   background: linear-gradient(-135deg, #000000, #443b39);
-}
-
-.header {
-  height: 100px;
-  width: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-}
-
-.header-logo {
-  color: white;
-  font-family: 'Apple Chancery','Courier New',sans-serif;
-  font-size: 45px;
-  display: flex;
-  margin: 10px 40px;
-  align-items: center;
-}
-
-.header-logo img {
-  margin: 20px 10px 10px;
-}
-
-.header-lists {
-  display: flex;
-}
-
-.header-lists li {
-  list-style: none;
-  text-align: right;
-  font-size: 20px;
-  margin: 30px 20px;
 }
 
 .main {
