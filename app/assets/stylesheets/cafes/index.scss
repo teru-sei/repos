@@ -1,0 +1,180 @@
+
+
+body {
+  background: linear-gradient(-135deg, #000000, #443b39);
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  color: white;
+  font-family: 'Apple Chancery','Courier New',sans-serif;
+  font-size: 45px;
+  display: flex;
+  margin: 10px 40px;
+  align-items: center;
+}
+
+.header-logo img {
+  margin: 20px 10px 10px;
+}
+
+.header-lists {
+  display: flex;
+}
+
+.header-lists li {
+  list-style: none;
+  text-align: right;
+  font-size: 20px;
+  margin: 30px 20px;
+}
+
+.main {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.side-image {
+  width: 30%;
+}
+
+.top-img {
+  height: 220px;
+  width: 300px;
+  margin-left: 20px;
+}
+
+.bottom-img {
+  height: 210px;
+  width: 310px;
+  margin: 65px 0 0 70px;
+}
+
+.slide {
+  width: 800px;
+  height: 480px;
+  justify-content: right;
+  margin: 20px 30px;
+  position: relative;
+  overflow: hidden;
+  animation: slideAnime, 12s, ease, infinite;
+}
+
+@keyframes slideAnime {
+  0% { opacity: 0 }
+  5% { opacity: 1 }
+ 20% { opacity: 1 }
+ 26% { opacity: 0 }
+100% { opacity: 0 }
+}
+
+.slide img:nth-of-type(1) { animation-delay: 0s }
+.slide img:nth-of-type(2) { animation-delay: 3s }
+.slide img:nth-of-type(3) { animation-delay: 6s }
+.slide img:nth-of-type(4) { animation-delay: 9s }
+
+.slide img {
+  display: block;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  animation: slideAnime 12s ease infinite;
+}
+
+.contents {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contents h1 {
+  color: white;
+}
+
+.contents span {
+  animation: blinkAnime 1.2s infinite alternate;
+  color: #BB0000;
+
+}
+
+@keyframes blinkAnime{
+  0% { color: rgba(0, 0, 0, 0) }
+100% { color: rgba(255, 12, 127, 0.69) }
+}
+
+.contents h2 {
+  font-size: 30px;
+  display: inline-block;
+  border-bottom: 7px double rgb(85, 197, 62);
+}
+
+.purpose {
+  display: flex;
+  justify-content: space-around;
+}
+
+.purpose li {
+  list-style: none;
+  font-size: 25px;
+  display: inline;
+  letter-spacing: 5px;
+  background : linear-gradient(transparent 50%, #ffa64d 95%);
+}
+
+.genre {
+  text-decoration: none;
+}
+
+.place {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.btn-region {
+  margin-right: 70px;
+  text-decoration: none;
+  display: inline;
+  font-size: 25px;
+  border: 3px solid white;
+  padding: 7px;
+  letter-spacing: 3px;
+  background-color: #000000;
+}
+
+.footer {
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-img {
+  height: 300px;
+  width: 520px;
+}
+
+.footer h2 {
+  margin-right: 40px;
+}
+
+.footer span {
+  padding-left: 145px;
+}
+
+.message {
+  text-align: center;
+}
+
+.footer-girl {
+  height: 190px;
+  width: 200px;
+}

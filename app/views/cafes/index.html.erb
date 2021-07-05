@@ -1,0 +1,64 @@
+<%= render "shared/header" %>
+
+<div class="main">
+  <div class="wrapper">
+    <div class="side-image">
+      <%= image_tag "top-sweets.png", class: "top-img" %>
+      <%= image_tag "top-coffee.png", class: "bottom-img" %>
+    </div>
+    <div class="slide" id="makeImg">
+      <%= image_tag "sepia.640.png", class:"img" %>
+      <%= image_tag "tea.sepia.png", class:"img" %>
+      <%= image_tag "sweets.sepia.png", class:"img" %>
+      <%= image_tag "cafe.sepia.png", class:"img" %>
+    </div>
+  </div>
+  <div class="contents">
+    <h1>あなたはまだ出会っていないかもしれない...<br>運命とも思える<span>最高の一杯に</span></h1>
+    <h2>目的</h2>
+    <ul div class="purpose">
+        <li><%= link_to 'コーヒー', "#", class: "genre" %></li>
+        <li><%= link_to '紅茶', "#", class: "genre" %></li>
+        <li><%= link_to 'スイーツ', "#", class: "genre" %></li>
+        <li><%= link_to 'オシャレ', "#", class: "genre" %></li>
+    </ul>
+    <h2>地域</h2>
+    <ul div class="place">
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >東京</button>
+      <% end %>
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >北海道</button>
+      <% end %>
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >東北</button>
+      <% end %>
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >関東</button>
+      <% end %>
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >中部</button>
+      <% end %>
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >関西</button>
+      <% end %>
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >中国</button>
+      <% end %>
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >四国</button>
+      <% end %>
+      <li><%= link_to "#" do %></li>
+        <button class="btn-region" >九州</button>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <%= image_tag "plant-698637_640.jpg", class:"footer-img" %>
+  <div class="message">
+    <h2>カフェに求めるものはなんですか？<br><span>あなたにも運命の出会いがありますように...</span></h2>
+    <%= image_tag "coffee.girl.png", class:"footer-girl" %>
+  </div>
+</div>
