@@ -58,7 +58,6 @@
 | recommend  | text       | null: false                    |
 | user_id    | references | null: false, foreign_key: true |
 | purpose_id | references | null: false, foreign_key: true |
-| comment_id | references | null: false, foreign_key: true |
 
 ### Association
 

@@ -6,6 +6,7 @@
 
   <ul div class="header-lists">
     <% if user_signed_in? %>
+      <li><%= link_to '新規投稿', new_cafe_path, class: "new-cafe" %></li>
       <li><%= link_to 'マイページ', "#", class: "user-page" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <% else %>
