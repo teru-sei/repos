@@ -1,16 +1,16 @@
 <div class="header">
   <div class="header-logo">
-    Repos
-    <%= image_tag "coffee.cup.png", class:"img" %>
+    <%= link_to "Repos", "/" %>
+    <%= link_to image_tag("coffee.cup.png", class:"img"), "/" %>
   </div>
 
   <ul div class="header-lists">
-    <%# if user_signed_in? %>
-      <li><%= link_to 'ログイン', "#", class: "login" %></li>
-      <li><%= link_to '新規登録', "#", class: "sign-in" %></li>
-    <% #else %>
+    <% if user_signed_in? %>
       <li><%= link_to 'マイページ', "#", class: "user-page" %></li>
-      <li><%= link_to 'ログアウト', "#", class: "logout" %></li>
-    <%# end %>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-in" %></li>
+    <% end %>
   </ul>
 </div>

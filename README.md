@@ -34,12 +34,12 @@
 
 ## users テーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| nickname   | string     | null: false                    |
-| email      | string     | null: false, uniqueness: true  |
-| password   | string     | null: false                    |
-| profile    | text       |                                |
+| Column     | Type       | Options                   |
+| ---------- | ---------- | ------------------------- |
+| nickname   | string     | null: false               |
+| email      | string     | null: false, unique: true |
+| password   | string     | null: false               |
+| profile    | text       |                           |
 
 ### Association
 

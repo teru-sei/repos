@@ -1,0 +1,32 @@
+.session {
+  height: 100vh;
+  font-size: 25px;
+  text-align: center;
+}
+
+.form-group {
+  margin-top: 15px;
+}
+
+.input-default {
+  height: 40px;
+  width: 300px;
+  font-size: large;
+  color: black;
+}
+
+.text-default {
+  height: 60px;
+  width: 400px;
+  font-size: large;
+  color: black;
+}
+
+.submit {
+  margin-top: 20px;
+  height: 50px;
+  width: 100px;
+  font-size: large;
+  color: black;
+  background-color: brown;
+}
