@@ -1,7 +1,39 @@
 <%= render "shared/header" %>
 
-<h2>新規カフェ登録</h2>
+<%= form_with model: @cafes, url: cafes_path, class:"new-cafe", local: true do |f| %>
 
-<%= form_with model: @cafes, url: cafe_path, class:"new-cafe", local: true do |f| %>
+  <h2>新規カフェ登録</h2>
 
+  <div class="form-image">
+    <p>画像のアップロード<span>※必須</span></p>
+    <%= f.file_field :image, id:"cafe-image" %>
+  </div>
+  <div class="form-group">
+    <label class="form-text">名前</label>
+    <span class="indispensable">※必須</span>
+    <div class="field">
+      <%= f.text_field :name, class:"input-default", id:"name" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-text">住所</label>
+    <span class="indispensable">※必須</span>
+    <div class="field">
+      <%= f.text_field :address, class:"input-default", id:"address" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-text">URL</label>
+    <div class="field">
+      <%= f.text_field :address, class:"input-default", id:"URL" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-text">おすすめポイント！</label>
+    <span class="indispensable">※必須</span>
+    <div class="field">
+      <%= f.text_field :address, class:"input-default", id:"recommend" %>
+    </div>
+  </div>
+  
 <% end %>

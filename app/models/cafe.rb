@@ -1,4 +1,6 @@
 class Cafe < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :purpose
 
   with_options presence: true do
     validates :image
