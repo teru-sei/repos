@@ -7,7 +7,6 @@ class CafesController < ApplicationController
   end
 
   def create
-    
     @cafe = Cafe.create(cafe_params)
     if @cafe.save
       redirect_to root_path

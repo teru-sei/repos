@@ -1,5 +1,6 @@
 class Cafe < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :purpose
   belongs_to :prefecture
 
   with_options presence: true do
