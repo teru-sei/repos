@@ -10,6 +10,7 @@ class Cafe < ApplicationRecord
     validates :user_id
 
     with_options numericality: { other_tham: 1 } do
+      validates :purpose_id
       validates :prefecture_id
     end
   end

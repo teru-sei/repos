@@ -44,7 +44,6 @@
 ### Association
 
 - has_many :cafes
-- belongs_to :purpose, through :purpose
 - has_many :comments
 - has_many :likes
 
@@ -57,29 +56,15 @@
 | address       | string     | null: false                    |
 | URL           | string     |                                |
 | recommend     | text       | null: false                    |
-| purpose       | string     | null: false                    |
+| purpose_id    | integer    | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | user_id       | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :purpose, through :purpose
 - has_many :comments
 - has_many :likes
-
-
-## purposes テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user_id | references | null: false, foreign_key: true |
-| cafe_id | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :cafe
 
 
 ## comments テーブル
