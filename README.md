@@ -50,15 +50,15 @@
 
 ## cafes テーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| name       | string     | null: false                    |
-| address    | string     | null: false                    |
-| URL        | string     |                                |
-| recommend  | text       | null: false                    |
-| user_id    | references | null: false, foreign_key: true |
-| purpose_id | references | null: false, foreign_key: true |
-| comment_id | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| name          | string     | null: false                    |
+| address       | string     | null: false                    |
+| URL           | string     |                                |
+| recommend     | text       | null: false                    |
+| purpose_id    | integer    | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| user_id       | references | null: false, foreign_key: true |
 
 ### Association
 

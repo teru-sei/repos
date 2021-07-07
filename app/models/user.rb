@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, null: false
-  validates :email, null: false
-  validates :password, null: false
+  belongs_to :user
+  #has_many :comments
+  #has_many :likes
 end

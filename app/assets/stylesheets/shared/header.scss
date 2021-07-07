@@ -9,18 +9,19 @@
 .header-logo {
   color: white;
   font-family: 'Apple Chancery','Courier New',sans-serif;
-  font-size: 45px;
+  font-size: 60px;
   display: flex;
   margin: 10px 40px;
   align-items: center;
 }
 
 .header-logo img {
-  margin: 25px 10px 0 10px;
+  margin: 40px 10px 0 15px;
 }
 
 .header-lists {
   display: flex;
+  margin-right: 40px;
 }
 
 .header-lists li {
