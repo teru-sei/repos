@@ -1,6 +1,6 @@
 class Cafe < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :purpose
+  belongs_to :prefecture
 
   with_options presence: true do
     validates :image
@@ -8,6 +8,10 @@ class Cafe < ApplicationRecord
     validates :address
     validates :recommend
     validates :user_id
+
+    with_options numericality: { other_tham: 1 } do
+      validates :prefecture_id
+    end
   end
 
   belongs_to :user
