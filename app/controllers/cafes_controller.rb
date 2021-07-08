@@ -15,6 +15,11 @@ class CafesController < ApplicationController
     end
   end
 
+  def search
+    @cafes = Cafe.search(params[:prefecture_id])
+  end
+
+
   private
 
   def cafe_params
