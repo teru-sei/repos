@@ -1,4 +1,5 @@
 class CafesController < ApplicationController
+
   def index
   end
 
@@ -16,7 +17,9 @@ class CafesController < ApplicationController
   end
 
   def search
-    @cafes = Cafe.search(params[:prefecture_id])
+    @search = Cafe.select(:prefecture_id)
+    @search = Cafe.pluck("prefecture_id")
+    @cafe = Cafe.find(params[:id])
   end
 
 

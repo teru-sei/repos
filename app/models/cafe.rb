@@ -21,6 +21,7 @@ class Cafe < ApplicationRecord
   #has_many :likes
   has_one_attached :image
 
-  def self.search(seach)
+  def self.search(search)
+    Cafe.all
   end
 end
