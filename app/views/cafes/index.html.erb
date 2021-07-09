@@ -23,19 +23,16 @@
         <li><%= link_to 'オシャレ', "#", class: "genre" %></li>
     </ul>
     <h2>地域</h2>
-    <%= form_with(url: search_cafes_path, local: true, method: :get) do |f| %>
       <ul div class="place">
-        <li><%= f.submit "東京", class:"btn-region", id:"search1", method: :get %></li>
-        <li><%= f.submit "北海道", class:"btn-region", id:"search2", method: :get %></li>
-        <li><%= f.submit "東北", class:"btn-region", id:"search3", method: :get %></li>
-        <li><%= f.submit "関東", class:"btn-region", id:"search4", method: :get %></li>
-        <li><%= f.submit "中部", class:"btn-region", id:"search5", method: :get %></li>
-        <li><%= f.submit "関西", class:"btn-region", id:"search6", method: :get %></li>
-        <li><%= f.submit "中国", class:"btn-region", id:"search7", method: :get %></li>
-        <li><%= f.submit "四国", class:"btn-region", id:"search8", method: :get %></li>
-        <li><%= f.submit "九州", class:"btn-region", id:"search9", method: :get %></li>
-      </ul>
-    <% end %>
+        <li><%= link_to "東京",search_cafes_path(region: 1), class:"btn-region", method: :get %></li>
+        <li><%= link_to "北海道",search_cafes_path(region: 2), class:"btn-region", method: :get %></li>
+        <li><%= link_to "東北",search_cafes_path(region: 3), class:"btn-region", method: :get %></li>
+        <li><%= link_to "関東",search_cafes_path(region: 4), class:"btn-region", method: :get %></li>
+        <li><%= link_to "中部",search_cafes_path(region: 5), class:"btn-region", method: :get %></li>
+        <li><%= link_to "関西",search_cafes_path(region: 6), class:"btn-region", method: :get %></li>
+        <li><%= link_to "中国",search_cafes_path(region: 7), class:"btn-region", method: :get %></li>
+        <li><%= link_to "四国",search_cafes_path(region: 8), class:"btn-region", method: :get %></li>
+        <li><%= link_to "九州",search_cafes_path(region: 9), class:"btn-region", method: :get %></li>
   </div>
 </div>
 
