@@ -19,14 +19,16 @@
         <%= link_to cafe_path(cafe) do %>
           <%= image_tag cafe.image, class:"search-image" %>
           <div class="search-name">
-            <%= cafe.name %>
+            『<%= cafe.name %>』
+          </div>
+          <div class="search-purpose">
+          目的:  <%= cafe.purpose.name %>
           </div>
           <div class="search-region">
-            <%= cafe.prefecture.name %>
+          地域:  <%= cafe.prefecture.name %>
           </div>
-          おすすめポイント！
-          <div class="search-recommend">
-            <%= cafe.recommend %>
+          <div class="search-address">
+          住所:  <%= cafe.address %>
           </div>
         <% end %>
       </div>
