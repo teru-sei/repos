@@ -22,8 +22,9 @@ class CafesController < ApplicationController
   end
 
   def show
+    @cafe = Cafe.find(params[:id])
   end
-
+  
   private
 
   def cafe_params

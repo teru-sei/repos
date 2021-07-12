@@ -14,9 +14,9 @@
   <h2>カフェ一覧</h2>
   <h3 class="region"><%= @region %></h3>
   <div class="cafe-order">
-     <%= link_to cafe_path(@cafe) do %>
-      <% @cafe.each do |cafe| %>
-        <div class="cafe-search">
+    <% @cafe.each do |cafe| %>
+      <div class="cafe-search">
+        <%= link_to cafe_path(cafe) do %>
           <%= image_tag cafe.image, class:"search-image" %>
           <div class="search-name">
             <%= cafe.name %>
@@ -28,8 +28,8 @@
           <div class="search-recommend">
             <%= cafe.recommend %>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
