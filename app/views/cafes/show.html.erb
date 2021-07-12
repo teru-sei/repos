@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+<div class="cafe-detail">
+  <%= image_tag @cafe.image, class:"cafe-image" %>
+    <div class="cafe-name">
+      名前:  『<%= @cafe.name %>』
+    </div>
+    <div class="cafe-address">
+      住所:  <%= @cafe.address %>
+    </div>
+    <div class="cafe-URL">
+      <%= @cafe.URL, placeholder="URL" %>
+    </div>
+    <div class="cafe-purpose">
+      目的:  <%= @cafe.purpose.name %>
+    </div>
+    <span>おすすめポイント！</span>
+    <div class="cafe-recommend">
+      <%= @cafe.recommend %>
+    </div>
+</div>

@@ -21,7 +21,10 @@ class CafesController < ApplicationController
     set_search
   end
 
-
+  def show
+    @cafe = Cafe.find(params[:id])
+  end
+  
   private
 
   def cafe_params

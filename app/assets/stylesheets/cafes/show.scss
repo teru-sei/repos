@@ -1,0 +1,50 @@
+.cafe-detail {
+  height: 100%;
+  width: 80%;
+  margin: 60px auto;
+  text-align: center;
+  border: 5px double white;
+}
+
+.cafe-image {
+  height: 500px;
+  width: 70%;
+  margin-top: 40px;
+}
+
+.cafe-name {
+  font-size: 30px;
+  margin: 20px 0;
+}
+
+.cafe-address {
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+.cafe-URL {
+  height: 30px;
+  width: 80%;
+  margin: auto;
+  border: 2px solid white;
+  opacity: 0.5;
+}
+
+.cafe-purpose {
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+span {
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+}
+
+.cafe-recommend {
+  height: 120px;
+  width: 80%;
+  font-size: 25px;
+  margin: 25px auto;
+  border: 2px solid white;
+}
