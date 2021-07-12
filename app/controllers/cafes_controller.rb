@@ -53,9 +53,23 @@ class CafesController < ApplicationController
     elsif params[:region] == "8"
       @cafe = Cafe.where(prefecture_id: [37..40])
       @region = "四国"
-    else
+    elsif params[:region] == "9"
       @cafe = Cafe.where(prefecture_id: [41..48])
       @region = "九州"
+    elsif params[:genre] == "1"
+      @cafe = Cafe.where(purpose_id: [2])
+      @purpose = "コーヒー"
+    elsif params[:genre] == "2"
+      @cafe = Cafe.where(purpose_id: [3])
+      @purpose = "紅茶"
+    elsif params[:genre] == "3"
+      @cafe = Cafe.where(purpose_id: [4])
+      @purpose = "スイーツ"
+    elsif params[:genre] == "4"
+      @cafe = Cafe.where(purpose_id: [5])
+      @purpose = "オシャレ"
+    else
+      render :index
     end
   end
 end
