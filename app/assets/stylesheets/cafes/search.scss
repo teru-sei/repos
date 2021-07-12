@@ -1,0 +1,46 @@
+.cafe-all {
+  height: 100vh;
+}
+
+.cafe-all h2 {
+  margin: 20px;
+}
+
+.region {
+  font-size: 30px;
+  text-align: center;
+}
+
+.cafe-order {
+  display: flex;
+}
+
+.cafe-search {
+  height: 450px;
+  width: 30%;
+  border: 3px solid white;
+  margin: 20px 30px;
+  text-align: center;
+}
+
+.search-image {
+  height: 240px;
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+.search-name {
+  font-size: 30px;
+}
+
+.search-region {
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.search-recommend {
+  height: 23%;
+  font-size: 20px;
+  border: 2px solid white;
+}
