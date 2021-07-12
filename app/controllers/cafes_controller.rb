@@ -21,6 +21,8 @@ class CafesController < ApplicationController
     set_search
   end
 
+  def show
+  end
 
   private
 
