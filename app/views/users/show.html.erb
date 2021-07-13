@@ -7,7 +7,7 @@
       <%= "名前" %>
     </div>
     <div class="user-profile">
-      <%= current_user.nickname %>
+      <%= @user.nickname %>
     </div>
   </div>
   <div class="name-wrapper">
@@ -15,7 +15,7 @@
       <%= "Email" %>
     </div>
     <div class="user-profile">
-      <%= current_user.email %>
+      <%= @user.email %>
     </div>
   </div>
   <div class="name-wrapper">
@@ -23,15 +23,17 @@
       <%= "プロフィール" %>
     </div>
     <div class="user-profile">
-      <%= current_user.profile %>
+      <%= @user.profile %>
     </div>
   </div>
-  <div class="edit-btn">
-    <%= link_to "編集する", "#", class:"user-edit" %>
-  </div>
+  <% if current_user.id == @user.id %>
+    <div class="edit-btn">
+      <%= link_to "編集する", "#", class:"user-edit" %>
+    </div>
+  <% end %>
 
-<% if @cafe.present? %>
- <div class="cafe-page">
+  <% if @cafe.present? %>
+  <div class="cafe-page">
     <h2>投稿したカフェ</h2>
     <div class="cafe-order">
     <% @cafe.each do |cafe| %>
@@ -53,7 +55,7 @@
         <% end %>
       </div>
     <% end %>
-  </div>
     </div>
+  </div>
+  <% end %>
 </div>
-<% end %>

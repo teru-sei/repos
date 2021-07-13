@@ -1,5 +1,5 @@
 .my-page {
-  height: 100vh;
+  height: 100%;
   margin-top: 50px;
 }
 
@@ -19,8 +19,8 @@
 
 .name {
   font-size: 20px;
-  padding: 15px 0;
-  height: 70px;
+  padding: 35px 0;
+  height: 100px;
   width: 160px;
   text-align: center;
   border: 3px solid white;
@@ -28,8 +28,8 @@
 
 .user-profile {
   font-size: 20px;
-  padding: 15px 0;
-  height: 70px;
+  padding: 35px 0;
+  height: 100px;
   width: calc(70% - 160px);
   text-align: center;
   border: 3px solid white;
