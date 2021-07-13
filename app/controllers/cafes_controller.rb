@@ -1,5 +1,5 @@
 class CafesController < ApplicationController
-
+  before_action :set_user
 
   def index
   end
@@ -29,6 +29,10 @@ class CafesController < ApplicationController
 
   def cafe_params
     params.permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id).merge(user_id: current_user.id)
+  end
+
+  def set_user
+    @user = current_user
   end
 
   def set_search
