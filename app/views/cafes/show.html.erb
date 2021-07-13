@@ -18,4 +18,7 @@
     <div class="cafe-recommend">
       <%= @cafe.recommend %>
     </div>
+    <div class="cafe-purpose">
+      投稿者:  <%= link_to "#{@cafe.user.nickname}", user_path(@cafe.user_id) %>
+    </div>
 </div>
