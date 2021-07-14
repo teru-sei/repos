@@ -3,4 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @cafe = @user.cafes
   end
+
+  def edit
+  end
 end

@@ -18,7 +18,12 @@
     <div class="cafe-recommend">
       <%= @cafe.recommend %>
     </div>
-    <div class="cafe-purpose">
-      投稿者:  <%= link_to "#{@cafe.user.nickname}", user_path(@cafe.user_id) %>
-    </div>
+   <div class="cafe-user">
+      投稿者:  <%= link_to "#{@cafe.user.nickname}", user_path(@cafe.user_id), class:"post-user" %>
+      <% if current_user.id == @cafe.user_id %>
+        <div class="edit-btn">
+          <%= link_to "編集する", edit_cafe_path, class:"cafe-edit" %>
+        </div>
+      <% end %>
+      </div>
 </div>
