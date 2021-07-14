@@ -23,6 +23,7 @@
       <% if current_user.id == @cafe.user_id %>
         <div class="edit-btn">
           <%= link_to "編集する", edit_cafe_path, class:"cafe-edit" %>
+          <%= link_to "削除する", cafe_path, method: :delete, class:"cafe-destroy" %>
         </div>
       <% end %>
       </div>
