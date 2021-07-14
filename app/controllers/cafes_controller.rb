@@ -1,5 +1,6 @@
 class CafesController < ApplicationController
   before_action :set_user
+  before_action :set_cafe, only: [:show, :edit, :update]
 
   def index
   end
@@ -22,17 +23,32 @@ class CafesController < ApplicationController
   end
 
   def show
-    @cafe = Cafe.find(params[:id])
+  end
+
+  def edit
+    @image = @cafe.image
+  end
+
+  def update
+    if @cafe.update(cafe_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
   
   private
 
   def cafe_params
-    params.permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id).merge(user_id: current_user.id)
+    params.permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :id).merge(user_id: current_user.id)
   end
 
   def set_user
     @user = current_user
+  end
+
+  def set_cafe
+    @cafe = Cafe.find(params[:id])
   end
 
   def set_search

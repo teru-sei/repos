@@ -48,3 +48,30 @@
   margin: 25px auto;
   border: 2px solid white;
 }
+
+.cafe-user {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 25px;
+}
+
+.post-user {
+  margin: 20px;
+}
+
+// userページ編集ボタンと併用
+.edit-btn {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.cafe-edit {
+  width: 150px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: brown;
+  letter-spacing: 7px;
+  text-align: center;
+}

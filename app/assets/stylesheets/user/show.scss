@@ -35,6 +35,22 @@
   border: 3px solid white;
 }
 
+.name-profile {
+  font-size: 20px;
+  padding: 55px 0;
+  height: 150px;
+  width: 160px;
+  text-align: center;
+  border: 3px solid white;
+}
+
+.profile {
+  font-size: 20px;
+  height: 150px;
+  width: calc(70% - 160px);
+  border: 3px solid white;
+}
+
 .edit-btn {
   display: flex;
   justify-content: center;
@@ -44,7 +60,6 @@
 .user-edit {
   width: 200px;
   font-size: 25px;
-  
   padding: 10px;
   background-color: brown;
   letter-spacing: 7px;
