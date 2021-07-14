@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
   before_action :set_user
-  before_action :set_cafe, only: [:show, :edit, :update]
+  before_action :set_cafe, only: [:show, :edit, :update, :destroy]
 
   def index
   end
@@ -35,6 +35,11 @@ class CafesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @cafe.destroy
+    redirect_to root_path
   end
   
   private
