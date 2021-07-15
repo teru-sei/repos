@@ -7,10 +7,9 @@ class Cafe < ApplicationRecord
     validates :image
     validates :name
     validates :address
-    validates :recommend
-    validates :user_id
+    validates :recommend, length: { maximum: 100 }
 
-    with_options numericality: { other_tham: 1 } do
+    with_options numericality: { other_than: 1, message: "can't be blank" } do
       validates :purpose_id
       validates :prefecture_id
     end

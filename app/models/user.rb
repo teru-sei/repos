@@ -8,6 +8,7 @@ class User < ApplicationRecord
     validates :email
     validates :password
   end
+    validates :profile, length: { maximum: 100}
 
   has_many :cafes
   #has_many :comments
