@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
   before_action :set_user
-  before_action :set_cafe, only: [:show, :edit, :update, :destroy]
+  before_action :set_cafe, only: [:show, :edit, :update]
 
   def index
   end
@@ -35,11 +35,6 @@ class CafesController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    @cafe.destroy
-    redirect_to root_path
   end
   
   private
@@ -96,6 +91,8 @@ class CafesController < ApplicationController
     elsif params[:genre] == "4"
       @cafe = Cafe.where(purpose_id: [5])
       @purpose = "オシャレ"
+    elsif params[:prefecture_id]
+      @cafe = Cafe.where(prefecture_id: params[:prefecture_id])
     else
       render :index
     end

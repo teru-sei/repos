@@ -1,17 +1,14 @@
 <%= render "shared/header" %>
 
-<%# if @region != "東京" || @region != "北海道" %>
-  <%#= form_with model: @cafes, class:"search-cafe", local: true do |f| %>
-    <%# if @region = "四国" %>
-      <%#= f.select :prefecture_id, [["香川", 37], ["愛媛", 38]], { include_blank: true } %>
-      <%#= link_to "検索", search_cafes_path(:prefecture_id), method: :get %>
-    <%# end %>
-  <%# end %>
-
-<%# end %>
-
 <div class="cafe-all">
-  <h2>カフェ一覧</h2>
+  <div class="search-header">
+    <h2>カフェ一覧</h2>
+    <div class="prefecture-search">
+      <h3>さらに絞り込む</h3>
+      <%= render "shared/search" %>
+    </div>
+  </div>
+
   <h3 class="region"><%= @region %></h3>
   <div class="cafe-order">
     <% @cafe.each do |cafe| %>
