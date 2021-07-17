@@ -1,0 +1,6 @@
+<% unless params[:genre] == nil %>
+  <%= form_with model: @cafes, class:"search-cafe", method: :get, local: true do |f| %>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"cafe-prefecture"}) %>
+    <%= f.submit "検索", class:"select-btn" %>
+  <% end %>
+<% end %>

@@ -3,10 +3,11 @@
 <div class="cafe-all">
   <div class="search-header">
     <h2>カフェ一覧</h2>
-    <div class="prefecture-search">
-      <h3>さらに絞り込む</h3>
-      <%= render "shared/search" %>
-    </div>
+
+      <div class="prefecture-search">
+        <%= render "shared/prefecture" %>
+        <%= render "shared/purpose" %>
+     </div>
   </div>
 
   <h3 class="region"><%= @region %></h3>
