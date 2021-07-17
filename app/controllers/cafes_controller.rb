@@ -1,6 +1,6 @@
 class CafesController < ApplicationController
   before_action :set_user
-  before_action :set_cafe, only: [:show, :edit, :update, :destroy]
+  before_action :set_cafe, only: [:show, :edit, :update]
 
   def index
   end
@@ -19,7 +19,9 @@ class CafesController < ApplicationController
   end
 
   def search
-    set_search
+    binding.pry
+    set_prefecture
+    set_purpose
   end
 
   def show
@@ -36,11 +38,6 @@ class CafesController < ApplicationController
       render :edit
     end
   end
-
-  def destroy
-    @cafe.destroy
-    redirect_to root_path
-  end
   
   private
 
@@ -56,7 +53,7 @@ class CafesController < ApplicationController
     @cafe = Cafe.find(params[:id])
   end
 
-  def set_search
+  def set_prefecture
     if  params[:region] == "1"
       @cafe = Cafe.where(prefecture_id: [14])
       @region = "東京"
@@ -84,20 +81,26 @@ class CafesController < ApplicationController
     elsif params[:region] == "9"
       @cafe = Cafe.where(prefecture_id: [41..48])
       @region = "九州地方"
-    elsif params[:genre] == "1"
-      @cafe = Cafe.where(purpose_id: [2])
-      @purpose = "コーヒー"
-    elsif params[:genre] == "2"
-      @cafe = Cafe.where(purpose_id: [3])
-      @purpose = "紅茶"
-    elsif params[:genre] == "3"
-      @cafe = Cafe.where(purpose_id: [4])
-      @purpose = "スイーツ"
-    elsif params[:genre] == "4"
-      @cafe = Cafe.where(purpose_id: [5])
-      @purpose = "オシャレ"
-    else
-      render :index
+    elsif params[:prefecture_id]
+      @cafe = Cafe.where(prefecture_id: params[:prefecture_id])
     end
+  end
+
+    def set_purpose
+      if params[:genre] == "1"
+        @cafe = Cafe.where(purpose_id: [2])
+        @purpose = "コーヒー"
+      elsif params[:genre] == "2"
+        @cafe = Cafe.where(purpose_id: [3])
+        @purpose = "紅茶"
+      elsif params[:genre] == "3"
+        @cafe = Cafe.where(purpose_id: [4])
+        @purpose = "スイーツ"
+      elsif params[:genre] == "4"
+        @cafe = Cafe.where(purpose_id: [5])
+        @purpose = "オシャレ"
+      elsif params[:purpose_id] && params[:prefecture_id]
+        @cafe = Cafe.where(purpose_id: params[:purpose_id]) 
+      end
   end
 end
