@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_07_06_111704) do
     t.text "recommend", null: false
     t.integer "purpose_id", null: false
     t.integer "prefecture_id", null: false
+    t.string "password", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
