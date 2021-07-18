@@ -10,16 +10,19 @@ class CafesController < ApplicationController
   end
 
   def create
-    @cafe = Cafe.create(cafe_params)
-    if @cafe.save
-      redirect_to root_path
+    if params[:password] == "1234"
+      @cafe = Cafe.create(cafe_params)
+      if @cafe.save
+        redirect_to root_path
+      else
+        render :new
+      end
     else
       render :new
     end
   end
 
   def search
-    binding.pry
     set_prefecture
     set_purpose
   end
@@ -42,7 +45,7 @@ class CafesController < ApplicationController
   private
 
   def cafe_params
-    params.permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :id).merge(user_id: current_user.id)
+    params.permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :password, :id).merge(user_id: current_user.id)
   end
 
   def set_user

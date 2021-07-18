@@ -7,6 +7,7 @@ class CreateCaves < ActiveRecord::Migration[6.0]
       t.text :recommend,         null: false
       t.integer :purpose_id,         null: false
       t.integer :prefecture_id,  null: false
+      t.string :password, null: false
       t.references :user,        null: false, foreign_key: true
       t.timestamps
     end
