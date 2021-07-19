@@ -53,7 +53,7 @@ RSpec.describe Cafe, type: :model do
       it 'recommendが100文字以上のとき登録できない' do
         @cafe.recommend = 'a' * 101
         @cafe.valid?
-        expect(@cafe.errors.full_messages).to include("Recommend is too long (maximum is 100 characters)")
+        expect(@cafe.errors.full_messages).to include('Recommend is too long (maximum is 100 characters)')
       end
     end
   end

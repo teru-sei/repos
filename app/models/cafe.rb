@@ -16,11 +16,11 @@ class Cafe < ApplicationRecord
   end
 
   belongs_to :user
-  #has_many :comments
-  #has_many :likes
+  # has_many :comments
+  # has_many :likes
   has_one_attached :image
 
-  def self.search(search)
+  def self.search(_search)
     Cafe.all
   end
 end
