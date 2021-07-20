@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'cafes#index'
   resources :users, only: [:show, :edit, :update]
   resources :cafes do
-    resources :comment, only: :create
+    resources :comments, only: [:create]
     collection do
       get 'search'
     end

@@ -26,5 +26,18 @@
           <%= link_to "削除する", cafe_path, method: :delete, class:"cafe-destroy" %>
         </div>
       <% end %>
-      </div>
+    </div>
+</div>
+
+<div class="comment">
+  <h2>コメント</h2>
+  <div class="comment-area">
+    <%= form_with(model: [@cafe, @comment], local: true) do |f| %>
+      <%= f.text_area :text, class:"text-area" %>
+      <%= f.file_field :image, class:"comment-image" %>
+    <div class="action">
+      <%= f.submit "コメントする", class:"comment-btn" %>
+    </div>
+    <% end %>
+  </div>
 </div>

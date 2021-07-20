@@ -49,12 +49,10 @@ ActiveRecord::Schema.define(version: 2021_07_20_025945) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "text", null: false
-    t.bigint "user_id", null: false
-    t.bigint "cafe_id", null: false
+    t.integer "user_id", null: false
+    t.integer "cafe_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cafe_id"], name: "index_comments_on_cafe_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
