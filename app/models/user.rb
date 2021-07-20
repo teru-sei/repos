@@ -11,6 +11,6 @@ class User < ApplicationRecord
   validates :profile, length: { maximum: 100 }
 
   has_many :cafes
-  # has_many :comments
+  has_many :comments
   # has_many :likes
 end
