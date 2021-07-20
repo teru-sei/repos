@@ -1,6 +1,8 @@
 class CafesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :search]
   before_action :set_user
   before_action :set_cafe, only: [:show, :edit, :update]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -42,6 +44,11 @@ class CafesController < ApplicationController
     end
   end
 
+  def destroy
+    @cafe.destroy
+    redirect_to root_path
+  end
+
   private
 
   def cafe_params
@@ -55,6 +62,12 @@ class CafesController < ApplicationController
 
   def set_cafe
     @cafe = Cafe.find(params[:id])
+  end
+
+  def move_to_index
+    if current_user.id != @cafe.user_id
+       redirect_to root_path
+    end
   end
 
   def set_prefecture
