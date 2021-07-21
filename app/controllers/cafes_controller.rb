@@ -32,6 +32,7 @@ class CafesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @cafe.comments.includes(:user)
+    @comments = @cafe.comments.order(created_at: "DESC")
   end
 
   def edit

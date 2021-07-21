@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def create
     @cafe = Cafe.find(params[:cafe_id])
     @comment = Comment.create(comment_params)
+    redirect_to cafe_path(@cafe.id)
   end
 
   private
