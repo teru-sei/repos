@@ -26,5 +26,33 @@
           <%= link_to "削除する", cafe_path, method: :delete, class:"cafe-destroy" %>
         </div>
       <% end %>
+    </div>
+</div>
+
+<div class="comment">
+  <h2>コメント</h2>
+  <div class="comment-area">
+    <%= form_with(model: [@cafe, @comment], local: true) do |f| %>
+      <%= f.text_area :text, class:"text-area" %>
+      <%= f.file_field :image, class:"comment-image" %>
+    <div class="action">
+      <%= f.submit "コメントする", class:"comment-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<div class="all-comments">
+  <% @comments.each do |comment| %>
+    <li class="comments-list">
+      <div class="comment-user">
+        投稿者: <%= link_to comment.user.nickname, user_path(comment.user.id) %>
       </div>
+      <div class="comment-text">
+        <%= comment.text %>
+      </div>
+      <div class="comments-image">
+        <%= image_tag comment.image.variant(resize: '300x300') if comment.image.attached? %>
+      </div>
+    </li>
+  <% end %>
 </div>

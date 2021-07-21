@@ -30,6 +30,9 @@ class CafesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @cafe.comments.includes(:user)
+    @comments = @cafe.comments.order(created_at: "DESC")
   end
 
   def edit
@@ -52,7 +55,7 @@ class CafesController < ApplicationController
   private
 
   def cafe_params
-    params.permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :password,
+    params.require(:cafe).permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :password,
                   :id).merge(user_id: current_user.id)
   end
 
