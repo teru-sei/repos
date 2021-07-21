@@ -29,6 +29,7 @@
     </div>
 </div>
 
+<% if user_signed_in? %>
 <div class="comment">
   <h2>コメント</h2>
   <div class="comment-area">
@@ -56,3 +57,4 @@
     </li>
   <% end %>
 </div>
+<% end %>
