@@ -120,7 +120,7 @@ class CafesController < ApplicationController
       @cafe = Cafe.where(purpose_id: [5])
       @purpose = 'オシャレ'
     elsif params[:purpose_id] && params[:prefecture_id]
-      @cafe = Cafe.where(purpose_id: params[:purpose_id])
+        @cafe = Cafe.where(purpose_id: params[:purpose_id], prefecture_id: params[:prefecture_id])
     end
   end
 end
