@@ -25,6 +25,7 @@ class CafesController < ApplicationController
   end
 
   def search
+
     set_prefecture
     set_purpose
   end
@@ -110,19 +111,19 @@ class CafesController < ApplicationController
     if params[:genre] == '1'
       @cafe = Cafe.where(purpose_id: [2])
       @purpose = 'コーヒー'
-      @purpose_id = 1
+      @purpose_id = 2
     elsif params[:genre] == '2'
       @cafe = Cafe.where(purpose_id: [3])
       @purpose = '紅茶'
-      @purpose_id = 2
+      @purpose_id = 3
     elsif params[:genre] == '3'
       @cafe = Cafe.where(purpose_id: [4])
       @purpose = 'スイーツ'
-      @purpose_id = 3
+      @purpose_id = 4
     elsif params[:genre] == '4'
       @cafe = Cafe.where(purpose_id: [5])
       @purpose = 'オシャレ'
-      @purpose_id = 4
+      @purpose_id = 5
     elsif params[:purpose_id] && params[:prefecture_id]
         @cafe = Cafe.where(purpose_id: params[:purpose_id], prefecture_id: params[:prefecture_id])
     end
