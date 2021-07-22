@@ -101,8 +101,8 @@ class CafesController < ApplicationController
     elsif params[:region] == '9'
       @cafe = Cafe.where(prefecture_id: [41..48])
       @region = '九州地方'
-    elsif params[:prefecture_id]
-      @cafe = Cafe.where(prefecture_id: params[:prefecture_id])
+    elsif params[:purpose_id] && params[:prefecture_id]
+      @cafe = Cafe.where(purpose_id: params[:purpose_id], prefecture_id: params[:prefecture_id])
     end
   end
 
