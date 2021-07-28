@@ -18,6 +18,21 @@
     <div class="cafe-recommend">
       <%= @cafe.recommend %>
     </div>
+    <div class="cafe-images">
+      <% if @cafe.images.attached? %>
+       <% @cafe.images.each do |img| %>
+        <%= image_tag img %>
+      <% end %>
+      <% end %>
+    </div>
+    <%= form_with model: @cafes, url: cafe_path, method: :put, class:"images-cafe", local: true do |f| %>
+    <div class="form-image">
+      <p>画像の投稿</p>
+      <%= f.file_field :images, multiple: true, id:"images-cafe" %>
+      <%= f.submit "写真を送る", class:"submit-cafe" %>
+    </div>
+    <% end %>
+
    <div class="cafe-user">
       投稿者:  <%= link_to "#{@cafe.user.nickname}", user_path(@cafe.user_id), class:"post-user" %>
       <% if current_user.id == @cafe.user_id %>
