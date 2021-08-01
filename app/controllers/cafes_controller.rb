@@ -56,7 +56,7 @@ class CafesController < ApplicationController
   private
 
   def cafe_params
-    params.permit({images: []}, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :password,
+    params.permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :password,
                   :id).merge(user_id: current_user.id)
   end
 

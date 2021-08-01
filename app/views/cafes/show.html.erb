@@ -21,7 +21,7 @@
     <div class="cafe-images">
       <% if @cafe.images.attached? %>
        <% @cafe.images.each do |img| %>
-        <%= image_tag img %>
+        <%= image_tag img, class:"all-images" %>
       <% end %>
       <% end %>
     </div>
