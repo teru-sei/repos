@@ -1,6 +1,5 @@
 class Cafe < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  mount_uploader :image, ImageUploader
   belongs_to :purpose
   belongs_to :prefecture
 
