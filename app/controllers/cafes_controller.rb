@@ -43,7 +43,7 @@ class CafesController < ApplicationController
     if @cafe.update(cafe_params)
       redirect_to cafe_path
     else
-      render :edit
+      render :show
     end
   end
 
