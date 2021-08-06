@@ -18,6 +18,7 @@ class Cafe < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   # has_many :likes
+  has_many_attached :images
   has_one_attached :image
 
   def self.search(_search)

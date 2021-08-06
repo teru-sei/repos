@@ -25,7 +25,6 @@ class CafesController < ApplicationController
   end
 
   def search
-
     set_prefecture
     set_purpose
   end
@@ -33,7 +32,7 @@ class CafesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @cafe.comments.includes(:user)
-    @comments = @cafe.comments.order(created_at: "DESC")
+    @comments = @cafe.comments.order(created_at: 'DESC')
   end
 
   def edit
@@ -42,9 +41,9 @@ class CafesController < ApplicationController
 
   def update
     if @cafe.update(cafe_params)
-      redirect_to root_path
+      redirect_to cafe_path
     else
-      render :edit
+      render :show
     end
   end
 
@@ -56,7 +55,7 @@ class CafesController < ApplicationController
   private
 
   def cafe_params
-    params.permit(:image, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :password,
+    params.permit({ images: [] }, :name, :address, :URL, :recommend, :purpose_id, :prefecture_id, :password,
                   :id).merge(user_id: current_user.id)
   end
 
@@ -69,9 +68,7 @@ class CafesController < ApplicationController
   end
 
   def move_to_index
-    if current_user.id != @cafe.user_id
-       redirect_to root_path
-    end
+    redirect_to root_path if current_user.id != @cafe.user_id
   end
 
   def set_prefecture
@@ -125,7 +122,7 @@ class CafesController < ApplicationController
       @purpose = 'オシャレ'
       @purpose_id = 5
     elsif params[:purpose_id] && params[:prefecture_id]
-        @cafe = Cafe.where(purpose_id: params[:purpose_id], prefecture_id: params[:prefecture_id])
+      @cafe = Cafe.where(purpose_id: params[:purpose_id], prefecture_id: params[:prefecture_id])
     end
   end
 end

@@ -5,7 +5,7 @@
   <h2>新規カフェ登録</h2>
 
   <div class="form-image">
-    <p>画像のアップロード<span>※必須</span></p>
+    <p>画像のアップロード<br>カフェの外観がわかる画像があればお願いします！<span>※必須</span></p>
     <%= f.file_field :image, id:"cafe-image" %>
   </div>
   <div class="form-cafe">
@@ -34,6 +34,10 @@
     <div class="area">
       <%= f.text_area :recommend, class:"input-area-default", id:"recommend" %>
     </div>
+  </div>
+    <div class="form-image">
+    <p>その他画像（複数選択可能）</p>
+    <%= f.file_field :images, multiple: true %>
   </div>
   <div class="form-cafe">
     <label class="form-text">目的</label>
